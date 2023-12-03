@@ -1,0 +1,17 @@
+.Header{
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 97px;
+    padding-right: 100px;
+    align-items: center;
+}
+nav.Header a{
+    text-decoration: none;
+    color: white;
+    margin-left: 32px;
+}
+nav.Header a:hover{
+    color: orange;
+}
