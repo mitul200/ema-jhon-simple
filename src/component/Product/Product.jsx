@@ -5,7 +5,7 @@ import './Product.css'
 
 const Product = (props) => {
     // console.log(props)
-    const {price,img,id,name,quantity,ratings,seller} = props.product
+    const {price,img,name,ratings,seller} = props.product
     const handelClick = props.handelClick
 
     
