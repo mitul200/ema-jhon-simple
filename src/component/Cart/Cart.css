@@ -3,6 +3,8 @@
     width: 264px;
     height: 944px;
     padding: 25px;
+    position: sticky;
+    top: 0;
 }
 /* .cart p{
     font-size: 17px;
