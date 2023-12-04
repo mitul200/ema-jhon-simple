@@ -15,9 +15,17 @@ const Shop = () => {
     },[])
 
     useEffect(()=>{
+        console.log('products', products)
         const storedCart = getShoppingCart();
-        console.log(storedCart)
-    },[])
+        // step --1-------//
+        for (const id in storedCart) {
+            // console.log(id)
+            const saveProducts = products.find(product=> product.id === id)
+            console.log(saveProducts)
+            
+        }
+
+    },[products])
 
     const handelClick =(product)=>{
         const newCart = [...cart , product]
