@@ -3,7 +3,7 @@ import './Cart.css'
 
 const Cart = ({cart}) => {
     // const {cart} = props //steps 1//
-    // console.log(cart)
+    console.log(cart)
 
     // total added ----
     let total = 0;
@@ -12,7 +12,7 @@ const Cart = ({cart}) => {
         // console.log(product)
          total = total + product.price
          totalShipping = totalShipping + product.shipping
-        console.log(totalShipping)  
+        // console.log(totalShipping)  
     }
     // tax total -----
     const tax = total*7/100
