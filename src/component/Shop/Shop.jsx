@@ -49,16 +49,20 @@ const Shop = () => {
 
 
 
-
-
-
-
-
-
-
-
     const handelClick =(product)=>{
-        const newCart = [...cart , product]
+        let newCart = []
+        // const newCart = [...cart , product]
+        const exiest = cart.find(pd => pd.id === product.id)
+        if(!exiest){
+            product.quentity =1
+             newCart= [...cart, product];
+
+        }
+        else{
+            exiest.quentity = exiest.quentity + 1
+            const remining = cart.filter(pd => pd.id !== product.id)
+            newCart = [...remining, exiest]
+        }
         setCart(newCart)
         addToDb(product.id)
 
