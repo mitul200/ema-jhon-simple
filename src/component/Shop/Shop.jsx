@@ -14,18 +14,48 @@ const Shop = () => {
         .then(data=> setProducts(data))
     },[])
 
-    useEffect(()=>{
-        console.log('products', products)
-        const storedCart = getShoppingCart();
-        // step --1-------//
-        for (const id in storedCart) {
-            // console.log(id)
-            const saveProducts = products.find(product=> product.id === id)
-            console.log(saveProducts)
-            
-        }
+    // useEffect(()=>{
+    //     // console.log('products', products)
+    //     const storedCart = getShoppingCart();
+    //     // step --1-------//
+    //     for (const id in storedCart) {
+    //         // step-2 get find data 
+    //         const addedProduct = products.find(product=> product.id === id)
+    //     //    step-3 get quantity 
+    //         const quantity = storedCart[id]
+    //         addedProduct.quantity = quantity
+    //         console.log(addedProduct)
+    //     }
 
+    // },[products])
+
+
+    useEffect(()=>{
+        const stodedCard = getShoppingCart()
+        const saveCart = [];
+        for (const id in stodedCard) {
+            // console.log(id) 
+            const addedProduct =products.find(product =>product.id === id)
+            if(addedProduct){
+              const quentity = stodedCard[id]
+              addedProduct.quentity = quentity
+              saveCart.push(addedProduct)
+            } 
+
+            // console.log('addedProduct', addedProduct)
+        }
+        setCart(saveCart)
     },[products])
+
+
+
+
+
+
+
+
+
+
 
     const handelClick =(product)=>{
         const newCart = [...cart , product]
