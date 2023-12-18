@@ -1,10 +1,11 @@
-import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './Product.css'
 
 const Product = (props) => {
     // console.log(props)
+    // eslint-disable-next-line react/prop-types
     const {price,img,name,ratings,seller} = props.product
     const handelClick = props.handelClick
 

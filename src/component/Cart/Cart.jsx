@@ -1,6 +1,7 @@
 
 import './Cart.css'
 
+// eslint-disable-next-line react/prop-types
 const Cart = ({cart}) => {
     // const {cart} = props //steps 1//
     console.log(cart)
