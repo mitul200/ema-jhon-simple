@@ -9,3 +9,17 @@
     gap: 45px;
     margin: 50px;
 }
+.btn-Proceed{
+    background-color: #FF9900;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 56px;
+    margin: 10px auto;
+    border-radius: 4px;
+    align-items: center;
+    color: aliceblue;
+}
+.proceed-link{
+ text-decoration:none;   
+}
