@@ -15,3 +15,11 @@ nav.Header a{
 nav.Header a:hover{
     color: orange;
 }
+.text-white{
+    color: white;
+    margin-left: 5px;
+}
+.logOut-btn{
+    color: beige;
+    margin-left: 5;
+}
