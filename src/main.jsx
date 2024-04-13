@@ -1,18 +1,18 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Shop from "./component/Shop/Shop.jsx";
-import Home from "./component/layout/Home.jsx";
-import Orders from "./component/Orders/Orders.jsx";
-import Inventory from "./component/Inventory/Inventory.jsx";
-import Login from "./component/Login/Login.jsx";
-import cartProductsLoder from "./loders/cartProductsLoder.js";
 import CheckOut from "./component/CheckOut/CheckOut.jsx";
-import SingUp from "./component/SingUp/SingUp.jsx";
+import Inventory from "./component/Inventory/Inventory.jsx";
+import Home from "./component/layout/Home.jsx";
+import Login from "./component/Login/Login.jsx";
+import Orders from "./component/Orders/Orders.jsx";
 import AuthProvider from "./component/Provider/AuthProvider.jsx";
 import PrivetRoute from "./component/Routs/PrivetRoute.jsx";
+import Shop from "./component/Shop/Shop.jsx";
+import SingUp from "./component/SingUp/SingUp.jsx";
+import "./index.css";
+import cartProductsLoder from "./loders/cartProductsLoder.js";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Shop></Shop>,
+        loader: () => fetch("http://localhost:5000/totalproducts"),
       },
       {
         path: "orders",
@@ -30,11 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: "inventory",
-        element: <PrivetRoute><Inventory></Inventory></PrivetRoute>,
+        element: (
+          <PrivetRoute>
+            <Inventory></Inventory>
+          </PrivetRoute>
+        ),
       },
       {
         path: "checkout",
-        element: <PrivetRoute><CheckOut></CheckOut></PrivetRoute>,
+        element: (
+          <PrivetRoute>
+            <CheckOut></CheckOut>
+          </PrivetRoute>
+        ),
       },
       {
         path: "login",
