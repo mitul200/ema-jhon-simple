@@ -1,10 +1,10 @@
-import "./Cart.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Cart.css";
 // eslint-disable-next-line react/prop-types
 const Cart = ({ cart, handelClearAll, children }) => {
   // const {cart} = props //steps 1//
-  console.log(cart);
+  // console.log(cart);
 
   // total added ----
   let total = 0;

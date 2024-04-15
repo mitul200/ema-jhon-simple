@@ -5,6 +5,7 @@ import "./ReviewItem.css";
 const ReviewItem = ({ product, handelRemoveFromCart }) => {
   // eslint-disable-next-line react/prop-types
   const { _id, img, price, name, quantity } = product;
+  console.log(quantity);
   return (
     <div className="review-items">
       <img src={img} alt="" />

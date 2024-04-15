@@ -71,20 +71,33 @@ const Shop = () => {
   }, [currentPage, itemsPerPages]);
 
   useEffect(() => {
-    const stodedCard = getShoppingCart();
-    const saveCart = [];
-    for (const id in stodedCard) {
-      // console.log(id)
-      const addedProduct = products.find((product) => product._id === id);
-      if (addedProduct) {
-        const quentity = stodedCard[id];
-        addedProduct.quentity = quentity;
-        saveCart.push(addedProduct);
-      }
+    const storedCard = getShoppingCart();
+    const ids = Object.keys(storedCard);
 
-      // console.log('addedProduct', addedProduct)
-    }
-    setCart(saveCart);
+    fetch(`http://localhost:5000/productsByIds`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(ids),
+    })
+      .then((res) => res.json())
+      .then((cartProducts) => {
+        const saveCart = [];
+        for (const id in storedCard) {
+          // console.log(id)
+          const addedProduct = cartProducts.find(
+            (product) => product._id === id
+          );
+          if (addedProduct) {
+            const quentity = storedCard[id];
+            addedProduct.quentity = quentity;
+            saveCart.push(addedProduct);
+          }
+          // console.log('addedProduct', addedProduct)
+        }
+        setCart(saveCart);
+      });
   }, [products]);
 
   const handelClick = (product) => {

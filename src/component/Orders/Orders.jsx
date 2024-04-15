@@ -10,7 +10,7 @@ import "./Order.css";
 const Orders = () => {
   const saveCart = useLoaderData();
   const [cart, setCart] = useState(saveCart);
-  console.log(cart);
+  // console.log(cart);
   const handelRemoveFromCart = (id) => {
     const remainig = cart.filter((product) => product._id !== id);
     setCart(remainig);
